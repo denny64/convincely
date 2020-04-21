@@ -1,5 +1,5 @@
 import React from 'react';
-import { HoverTooltip, ClickTooltip } from '../components/tooltip';
+import Tooltip from '../components/tooltip';
 
 const styles = {
   container: {
@@ -13,7 +13,7 @@ const styles = {
 
 export default () => (
   <div style={styles.container}>
-    <HoverTooltip />
-    <ClickTooltip />
+    <Tooltip hover />
+    <Tooltip click />
   </div>
 )

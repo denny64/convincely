@@ -36,7 +36,7 @@ const Tooltip = ({ text }) => (
   </div>
 )
 
-export const HoverTooltip = () => {
+const HoverTooltip = () => {
   const [toggle, useToggle] = useState(false);
 
   function toggleTooltip() {
@@ -51,7 +51,7 @@ export const HoverTooltip = () => {
   )
 }
 
-export const ClickTooltip = () => {
+const ClickTooltip = () => {
   const [toggle, useToggle] = useState(false);
 
   function toggleTooltip() {
@@ -66,4 +66,11 @@ export const ClickTooltip = () => {
       </div>
     </OutsideClickHandler>
   )
+}
+
+export default ({ hover, click }) => {
+  if (hover) return <HoverTooltip />;
+  else if (click) return <ClickTooltip />;
+  // Default to click tooltip
+  else return <ClickTooltip />;
 }
